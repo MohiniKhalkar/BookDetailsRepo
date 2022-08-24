@@ -26,5 +26,9 @@ public class BookController {
     public String sayHello(){
         return "WLCOME TO INDI";
 }
+@GetMapping("/welcome")
+    public String sayWelcome(){
+        return "Hello";
+}
 
 }
