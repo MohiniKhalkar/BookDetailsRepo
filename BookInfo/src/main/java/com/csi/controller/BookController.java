@@ -35,6 +35,10 @@ public class BookController {
         return "here Priyanka";
     }
 
+    @GetMapping("/herepractise")
+    public String herepractise() {
+        return "here ";
+    }
     @PutMapping("/updateData/{bookId}")
     public ResponseEntity<Book> updateData(@PathVariable long bookId, @RequestBody Book book) {
         return ResponseEntity.ok(bookService.updateData(book));
