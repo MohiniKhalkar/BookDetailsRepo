@@ -11,18 +11,20 @@ import java.util.List;
 public class BookDao {
     @Autowired
     BookRepo bookRepo;
-    public Book savedata(Book book){
+
+    public Book savedata(Book book) {
         return bookRepo.save(book);
     }
-    public List<Book> getalldata(){
+
+    public List<Book> getalldata() {
         return bookRepo.findAll();
     }
 
-    public Book updateData(Book book){
-      return  bookRepo.save(book);
+    public Book updateData(Book book) {
+        return bookRepo.save(book);
     }
 
-    public void deleteDataById(long bookId){
+    public void deleteDataById(long bookId) {
         bookRepo.deleteById(bookId);
     }
 }

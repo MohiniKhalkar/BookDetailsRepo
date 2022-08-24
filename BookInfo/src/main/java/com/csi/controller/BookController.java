@@ -29,9 +29,10 @@ public class BookController {
         return "WLCOME TO INDI";
     }
 
-    @GetMapping("/welcome")
-    public String sayWelcome() {
-        return "Hello";
+
+    @GetMapping("/priyanka")
+    public String sayPriyanka() {
+        return "here Priyanka";
     }
 
     @PutMapping("/updateData/{bookId}")

@@ -22,7 +22,7 @@ public class BookService {
     }
 
     public Book updateData(Book book) {
-      return   bookDao.updateData(book);
+        return bookDao.updateData(book);
     }
 
     public void deleteDataById(long bookId) {
