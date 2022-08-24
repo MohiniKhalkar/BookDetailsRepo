@@ -15,20 +15,35 @@ public class BookController {
     BookService bookService;
 
     @PostMapping("/savedata")
-    public ResponseEntity<Book>saveData(@RequestBody Book book){
-        return  ResponseEntity.ok(bookService.savedata(book));
+    public ResponseEntity<Book> saveData(@RequestBody Book book) {
+        return ResponseEntity.ok(bookService.savedata(book));
     }
+
     @GetMapping("/getalldata")
-    public ResponseEntity<List<Book>>getAllData(){
-        return  ResponseEntity.ok(bookService.getalldata());
+    public ResponseEntity<List<Book>> getAllData() {
+        return ResponseEntity.ok(bookService.getalldata());
     }
-@GetMapping("/say")
-    public String sayHello(){
+
+    @GetMapping("/say")
+    public String sayHello() {
         return "WLCOME TO INDI";
-}
-@GetMapping("/welcome")
-    public String sayWelcome(){
+    }
+
+    @GetMapping("/welcome")
+    public String sayWelcome() {
         return "Hello";
-}
+    }
+
+    @PutMapping("/updateData/{bookId}")
+    public ResponseEntity<Book> updateData(@PathVariable long bookId, @RequestBody Book book) {
+        return ResponseEntity.ok(bookService.updateData(book));
+
+    }
+
+    @DeleteMapping("/deleteDataById/{bookId}")
+    public ResponseEntity<String> deleteDataById(@PathVariable long bookId) {
+        bookService.deleteDataById(bookId);
+        return ResponseEntity.ok("Data Deleted Successfully");
+    }
 
 }

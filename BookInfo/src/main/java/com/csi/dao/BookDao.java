@@ -17,4 +17,12 @@ public class BookDao {
     public List<Book> getalldata(){
         return bookRepo.findAll();
     }
+
+    public Book updateData(Book book){
+      return  bookRepo.save(book);
+    }
+
+    public void deleteDataById(long bookId){
+        bookRepo.deleteById(bookId);
+    }
 }
